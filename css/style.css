@@ -136,3 +136,14 @@ button:hover {
     height: 50px;
   }
 }
+.slider { position:relative; height: 70vh; overflow:hidden; }
+.slide { position:absolute; width:100%; height:100%; background-size:cover; background-position:center; opacity:0; transition:opacity .8s; }
+.slide.active { opacity:1; }
+.slide-content { position:absolute; bottom:30%; width:100%; text-align:center; color:white; }
+.form-box { max-width:600px; margin:auto; background:#f4fdf4; padding:30px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+/* Re-use .btn styles */
+.features-grid { display:flex; gap:20px; justify-content:center; padding:40px; }
+.feature-box { flex:1; max-width:300px; background:white; padding:20px; border:1px solid #99cc99; border-radius:8px; text-align:center; }
+.stats { display:flex; justify-content:center; gap:40px; padding:40px; background:#f4fdf4; }
+.stat { text-align:center; }
+.stat h3 { color:#004d00; font-size:2.5rem; margin-bottom:10px; }

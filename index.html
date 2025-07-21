@@ -1,34 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>JUZ CLEAN RESOURCES</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <img src="images/logo.png" alt="JUZ CLEAN Logo" class="logo" />
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+  <header>…</header>
+
+  <!-- 1. Hero Slider -->
+  <section class="slider">
+    <div class="slide active" style="background-image:url('images/slide1.jpg')">
+      <div class="slide-content">
+        <h1>Eco-Friendly Cleaning You Can Trust</h1>
+        <p>Professional, safe, reliable cleaning services in Malaysia.</p>
+        <a href="#quote" class="btn">Request a Quote</a>
+      </div>
     </div>
-  </header>
+    <!-- Add more slides -->
+  </section>
 
-  <main>
-    <section class="hero">
-      <h1>Welcome to JUZ CLEAN RESOURCES</h1>
-      <p>Eco-friendly, professional cleaning solutions for homes and businesses in Malaysia.</p>
-    </section>
-  </main>
+  <!-- Quote Form -->
+  <section id="quote">
+    <div class="container form-box">
+      <h2>Get a Free Quote</h2>
+      <form>
+        <label>Type of Cleaning:</label>
+        <select><option>Residential</option><option>Commercial</option></select>
+        <label>Size:</label>
+        <select><option>Small</option><option>Large</option></select>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+  </section>
 
-  <footer>
-    <p>© 2025 JUZ CLEAN RESOURCES (M) SDN. BHD. All rights reserved.</p>
-  </footer>
+  <!-- 2. Features Grid -->
+  <section class="features-grid">
+    <div class="feature-box"><h3>Eco-Friendly Products</h3><p>Safe for family & pets.</p></div>
+    <div class="feature-box"><h3>Trained Professionals</h3><p>Skilled and trustworthy team.</p></div>
+    <div class="feature-box"><h3>100% Satisfaction</h3><p>We won't stop until you're happy.</p></div>
+  </section>
+
+  <!-- 3. Stats Section -->
+  <section class="stats">
+    <div class="stat"><h3>5+</h3><p>Years in Business</p></div>
+    <div class="stat"><h3>1,000+</h3><p>Homes Cleaned</p></div>
+    <div class="stat"><h3>99%</h3><p>Customer Satisfaction</p></div>
+  </section>
+
+  <footer>…</footer>
+
+  <script src="js/slider.js"></script>
 </body>
 </html>
