@@ -1,149 +1,348 @@
-/* === RESET === */
+/* ===== General Reset ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
   background-color: #ffffff;
-  color: #222222;
+  color: #222;
   line-height: 1.6;
 }
 
-/* === HEADER === */
+/* ===== Header ===== */
 header {
-  background-color: #004d00; /* Primary dark green */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 77, 0, 0.95); /* semi-transparent green */
   color: white;
-  padding: 20px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.container {
-  width: 90%;
-  margin: 0 auto;
+header .container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
 }
 
 .logo {
   height: 60px;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   margin-left: 20px;
-  font-weight: 600;
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #99cc99; /* Soft green on hover */
+  color: #ccffcc;
 }
 
-/* === HERO SECTION === */
-.hero {
-  background-color: #f2fff2; /* Light green-tinted background */
-  padding: 60px 20px;
+/* ===== Slider ===== */
+.slider {
+  margin-top: 80px; /* space below fixed header */
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+
+.slide-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
   text-align: center;
-  color: #004d00;
+  background-color: rgba(0, 77, 0, 0.6);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
 }
 
-.hero h1 {
+.slide-content h1 {
   font-size: 2.5rem;
   margin-bottom: 15px;
 }
 
-.hero p {
+.slide-content p {
   font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
-/* === GENERAL SECTION STYLES === */
-section {
-  padding: 40px 20px;
+/* ===== Button ===== */
+.btn {
+  background-color: #ccffcc;
+  color: #004d00;
+  padding: 12px 25px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s ease;
 }
 
-/* === FOOTER === */
+.btn:hover {
+  background-color: #99cc99;
+  color: white;
+}
+
+/* ===== Quote Form ===== */
+.form-box {
+  background-color: #f0fff0;
+  margin: 80px auto;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.form-box h2 {
+  margin-bottom: 20px;
+  color: #004d00;
+}
+
+form label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: 600;
+}
+
+form select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* ===== Features Section ===== */
+.intro {
+  background: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 2rem;
+  color: #004d00;
+  margin-bottom: 40px;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.feature-box {
+  background: #f9fff9;
+  border: 1px solid #b2d8b2;
+  border-radius: 10px;
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+}
+
+.feature-box h3 {
+  color: #004d00;
+  margin-bottom: 10px;
+}
+
+/* ===== Stats Section ===== */
+.stats {
+  background: #f0fff0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.stat h3 {
+  font-size: 2.5rem;
+  color: #004d00;
+  margin-bottom: 10px;
+}
+
+.stat p {
+  font-weight: 500;
+}
+
+/* ===== Footer ===== */
 footer {
   background-color: #004d00;
   color: white;
   text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
+  padding: 20px;
 }
 
-/* === TEXT === */
-h1, h2 {
-  color: #004d00;
-  margin-bottom: 15px;
-}
-
-p {
-  font-size: 1rem;
-}
-
-/* === LIST === */
-ul {
-  list-style: square;
-  padding-left: 40px;
-  font-size: 1.1rem;
-  color: #222;
-}
-
-/* === INPUTS (for future forms) === */
-input, textarea {
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #99cc99;
-  border-radius: 4px;
-  width: 100%;
-}
-
-button {
-  background-color: #004d00;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #007000;
-}
-
-/* === RESPONSIVE DESIGN === */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav {
-    margin-top: 15px;
-  }
-
   nav a {
-    display: block;
-    margin: 10px 0;
+    margin: 10px 8px;
   }
 
-  .logo {
-    height: 50px;
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slide-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .slider {
+    height: 60vh;
   }
 }
-.slider { position:relative; height: 70vh; overflow:hidden; }
-.slide { position:absolute; width:100%; height:100%; background-size:cover; background-position:center; opacity:0; transition:opacity .8s; }
-.slide.active { opacity:1; }
-.slide-content { position:absolute; bottom:30%; width:100%; text-align:center; color:white; }
-.form-box { max-width:600px; margin:auto; background:#f4fdf4; padding:30px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
-/* Re-use .btn styles */
-.features-grid { display:flex; gap:20px; justify-content:center; padding:40px; }
-.feature-box { flex:1; max-width:300px; background:white; padding:20px; border:1px solid #99cc99; border-radius:8px; text-align:center; }
-.stats { display:flex; justify-content:center; gap:40px; padding:40px; background:#f4fdf4; }
-.stat { text-align:center; }
-.stat h3 { color:#004d00; font-size:2.5rem; margin-bottom:10px; }
+/* Logo & Company Name */
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  height: 60px;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.company-link {
+  text-decoration: none;
+}
+
+.company-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  transition: color 0.3s;
+}
+
+.company-link:hover .company-name {
+  color: #ccffcc;
+}
+
+/* Responsive name for small screens */
+@media (max-width: 600px) {
+  .company-name {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .company-name::after {
+    content: " (JUZ CLEAN)";
+  }
+
+  .company-name::before,
+  .company-name::after {
+    display: none;
+  }
+
+  .company-name::before {
+    content: "JUZ CLEAN";
+    display: inline;
+  }
+}
+.expertise {
+  background-color: #f0fff0;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.expertise h2 {
+  font-size: 2rem;
+  color: #004d00;
+  margin-bottom: 40px;
+}
+
+.expertise-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.expertise-box {
+  background: #ffffff;
+  border: 1px solid #b2d8b2;
+  border-radius: 10px;
+  width: 300px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.expertise-box:hover {
+  transform: translateY(-5px);
+}
+
+.expertise-box h3 {
+  color: #004d00;
+  margin-bottom: 10px;
+}
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background-color: rgba(0, 77, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 5px;
+}
+
+.slider-btn:hover {
+  background-color: rgba(0, 77, 0, 0.8);
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}

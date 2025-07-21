@@ -9,17 +9,23 @@
 <body>
   <!-- Header -->
   <header>
-    <div class="container">
+  <div class="container">
+    <div class="logo-box">
       <img src="images/logo.png" alt="JUZ CLEAN Logo" class="logo" />
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+      <a href="index.html" class="company-link">
+        <h1 class="company-name">JUZ CLEAN RESOURCES (M) SDN. BHD.</h1>
+      </a>
     </div>
-  </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
 
   <!-- Hero Slider -->
   <section class="slider">
@@ -27,48 +33,50 @@
       <div class="slide-content">
         <h1>Professional Cleaning Services</h1>
         <p>Bringing sparkle and shine to your home and business.</p>
-        <a href="#quote" class="btn">Request a Quote</a>
+        <a href="services.html" class="btn">Explore Our Services</a>
       </div>
     </div>
     <div class="slide" style="background-image: url('images/slide2.jpg');">
       <div class="slide-content">
         <h1>Eco-Friendly Cleaning</h1>
         <p>Safe solutions for your family, pets, and the planet.</p>
-        <a href="#quote" class="btn">Get Started</a>
+       <a href="services.html" class="btn">Explore Our Services</a>
       </div>
     </div>
     <div class="slide" style="background-image: url('images/slide3.jpg');">
       <div class="slide-content">
         <h1>Trusted By Hundreds</h1>
         <p>Reliable, consistent, and guaranteed satisfaction.</p>
-        <a href="#quote" class="btn">Our Services</a>
+        <a href="services.html" class="btn">Explore Our Services</a>
       </div>
     </div>
+
+    <!-- Navigation Buttons -->
+    <button class="slider-btn prev">&#10094;</button>
+    <button class="slider-btn next">&#10095;</button>
   </section>
 
-  <!-- Quote Form -->
-  <section id="quote">
-    <div class="container form-box">
-      <h2>Get a Free Quote</h2>
-      <form>
-        <label for="type">Type of Cleaning:</label>
-        <select id="type">
-          <option>Residential</option>
-          <option>Commercial</option>
-          <option>Post-renovation</option>
-        </select>
-
-        <label for="size">Property Size:</label>
-        <select id="size">
-          <option>Small</option>
-          <option>Medium</option>
-          <option>Large</option>
-        </select>
-
-        <button type="submit" class="btn">Submit</button>
-      </form>
+  <!--Expertise-->
+  <section class="expertise">
+  <div class="container">
+    <h2>Our Cleaning Expertise</h2>
+    <div class="expertise-grid">
+      <div class="expertise-box">
+        <h3>🏠 Residential Cleaning</h3>
+        <p>We ensure your home is spotless, safe, and welcoming — whether it's routine maintenance or deep cleaning.</p>
+      </div>
+      <div class="expertise-box">
+        <h3>🏢 Commercial Cleaning</h3>
+        <p>From offices to retail spaces, we provide professional cleaning tailored to your business needs.</p>
+      </div>
+      <div class="expertise-box">
+        <h3>🛠️ Post-Renovation Cleaning</h3>
+        <p>We handle the dust, debris, and mess after renovations — so your space is ready to shine.</p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Features -->
   <section class="intro">
@@ -91,14 +99,27 @@
     </div>
   </section>
 
+  <!-- Mini About Us Section -->
+  <section class="mini-about">
+   <div class="container mini-about-grid">
+     <div class="about-image">
+      <img src="images/about-mini.jpg" alt="About JUZ CLEAN">
+     </div>
+   <div class="about-text">
+      <h2>About JUZ CLEAN</h2>
+      <p>
+        JUZ CLEAN RESOURCES (M) SDN. BHD. is a trusted Malaysian cleaning company providing professional, eco-friendly, and high-quality cleaning services to homes, offices, and commercial spaces.
+        Our trained team is committed to delivering sparkling clean results every time.
+      </p>
+      <a href="about.html" class="btn">Learn More</a>
+    </div>
+   </div>
+  </section>
+
   <!-- Stats Section -->
   <section class="stats">
     <div class="stat">
-      <h3>5+</h3>
-      <p>Years of Experience</p>
-    </div>
-    <div class="stat">
-      <h3>1,200+</h3>
+      <h3>500+</h3>
       <p>Spaces Cleaned</p>
     </div>
     <div class="stat">
