@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>JUZ CLEAN RESOURCES</title>
-  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>…</header>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <img src="images/logo.png" alt="JUZ CLEAN Logo" class="logo" />
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <!-- 1. Hero Slider -->
+  <!-- Hero Slider -->
   <section class="slider">
-    <div class="slide active" style="background-image:url('images/slide1.jpg')">
+    <div class="slide active" style="background-image: url('images/slide1.jpg');">
       <div class="slide-content">
-        <h1>Eco-Friendly Cleaning You Can Trust</h1>
-        <p>Professional, safe, reliable cleaning services in Malaysia.</p>
+        <h1>Professional Cleaning Services</h1>
+        <p>Bringing sparkle and shine to your home and business.</p>
         <a href="#quote" class="btn">Request a Quote</a>
       </div>
     </div>
-    <!-- Add more slides -->
+    <div class="slide" style="background-image: url('images/slide2.jpg');">
+      <div class="slide-content">
+        <h1>Eco-Friendly Cleaning</h1>
+        <p>Safe solutions for your family, pets, and the planet.</p>
+        <a href="#quote" class="btn">Get Started</a>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('images/slide3.jpg');">
+      <div class="slide-content">
+        <h1>Trusted By Hundreds</h1>
+        <p>Reliable, consistent, and guaranteed satisfaction.</p>
+        <a href="#quote" class="btn">Our Services</a>
+      </div>
+    </div>
   </section>
 
   <!-- Quote Form -->
@@ -26,30 +51,66 @@
     <div class="container form-box">
       <h2>Get a Free Quote</h2>
       <form>
-        <label>Type of Cleaning:</label>
-        <select><option>Residential</option><option>Commercial</option></select>
-        <label>Size:</label>
-        <select><option>Small</option><option>Large</option></select>
+        <label for="type">Type of Cleaning:</label>
+        <select id="type">
+          <option>Residential</option>
+          <option>Commercial</option>
+          <option>Post-renovation</option>
+        </select>
+
+        <label for="size">Property Size:</label>
+        <select id="size">
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+        </select>
+
         <button type="submit" class="btn">Submit</button>
       </form>
     </div>
   </section>
 
-  <!-- 2. Features Grid -->
-  <section class="features-grid">
-    <div class="feature-box"><h3>Eco-Friendly Products</h3><p>Safe for family & pets.</p></div>
-    <div class="feature-box"><h3>Trained Professionals</h3><p>Skilled and trustworthy team.</p></div>
-    <div class="feature-box"><h3>100% Satisfaction</h3><p>We won't stop until you're happy.</p></div>
+  <!-- Features -->
+  <section class="intro">
+    <div class="container">
+      <h2>Why Choose JUZ CLEAN?</h2>
+      <div class="features">
+        <div class="feature-box">
+          <h3>✔ Eco-Friendly Products</h3>
+          <p>We care about your health and the environment.</p>
+        </div>
+        <div class="feature-box">
+          <h3>✔ Skilled & Trusted Team</h3>
+          <p>Our cleaners are trained, punctual and professional.</p>
+        </div>
+        <div class="feature-box">
+          <h3>✔ 100% Satisfaction</h3>
+          <p>We guarantee you'll love the results — or we’ll make it right.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- 3. Stats Section -->
+  <!-- Stats Section -->
   <section class="stats">
-    <div class="stat"><h3>5+</h3><p>Years in Business</p></div>
-    <div class="stat"><h3>1,000+</h3><p>Homes Cleaned</p></div>
-    <div class="stat"><h3>99%</h3><p>Customer Satisfaction</p></div>
+    <div class="stat">
+      <h3>5+</h3>
+      <p>Years of Experience</p>
+    </div>
+    <div class="stat">
+      <h3>1,200+</h3>
+      <p>Spaces Cleaned</p>
+    </div>
+    <div class="stat">
+      <h3>99%</h3>
+      <p>Satisfaction Rate</p>
+    </div>
   </section>
 
-  <footer>…</footer>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 JUZ CLEAN RESOURCES (M) SDN. BHD. All rights reserved.</p>
+  </footer>
 
   <script src="js/slider.js"></script>
 </body>
