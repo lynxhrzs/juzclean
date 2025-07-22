@@ -823,19 +823,18 @@ footer {
 /* WhatsApp Floating Button with Pulse */
 .whatsapp-float {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 1000;
   width: 60px;
   height: 60px;
-  background-color: #25D366;
+  bottom: 20px;
+  right: 20px;
+  background-color: #29a71a;
   border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
   display: flex;
-  justify-content: center;
   align-items: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  justify-content: center;
   animation: pulse 2s infinite;
-  transition: transform 0.3s ease;
 }
 
 .whatsapp-float:hover {
@@ -843,9 +842,9 @@ footer {
 }
 
 .whatsapp-float img {
-  width: 28px;
-  height: 28px;
-  filter: brightness(0) invert(1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 /* Pulse animation */
@@ -859,5 +858,296 @@ footer {
   100% {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
   }
+  
+}
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
+.whatsapp-float img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover img {
+  transform: scale(1.1);
+}
+
+/* Tooltip text */
+.tooltip-text {
+  visibility: hidden;
+  background-color: #25d366;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  padding: 6px 12px;
+  position: absolute;
+  right: 60px; /* Position to the left of the icon */
+  bottom: 10px;
+  white-space: nowrap;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show tooltip on hover */
+.whatsapp-float:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* About Us Page */
+.about-us-page {
+  padding: 60px 20px;
+}
+
+.about-grid {
+  display: flex;
+  flex-direction: column;   /* 👈 Stack items vertically */
+  align-items: center;      /* 👈 Center them horizontally */
+  gap: 30px;
+  text-align: center;       /* Optional: center the text */
+}
+
+.about-image img:hover {
+  transform: scale(1.05); /* slightly zoom in */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* stronger shadow */
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #2f855a;
+}
+
+.about-text p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.about-text .btn {
+  margin-top: 15px;
+}
+
+/* Mission & Vision */
+.mission-vision {
+  background: #f5f5f5;
+  padding: 50px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.mv-box {
+  flex: 1 1 300px;
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.mv-box h3 {
+  color: #2f855a;
+  margin-bottom: 10px;
+}
+
+/* Team Section */
+.meet-our-team {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.team-member {
+  max-width: 220px;
+}
+
+.team-member img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #38a169;
+  transition: transform 0.3s;
+}
+
+.team-member:hover img {
+  transform: scale(1.05);
+}
+
+.team-member h4 {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.team-member p {
+  font-size: 0.95rem;
+  color: #777;
+}
+
+/* Timeline Section */
+.company-history {
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.timeline {
+  border-left: 3px solid #38a169;
+  margin-left: 20px;
+  position: relative;
+}
+
+.timeline-item {
+  margin-bottom: 40px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background: #38a169;
+  border-radius: 50%;
+  position: absolute;
+  left: -8px;
+  top: 5px;
+}
+
+.timeline-year {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #38a169;
+}
+
+.timeline-content h4 {
+  margin: 5px 0;
+  font-size: 1.2rem;
+}
+
+.timeline-content p {
+  color: #666;
+}
+
+/* Core Values Section */
+.core-values {
+  padding: 60px 20px;
+  background-color: #f5fdf7;
+  text-align: center;
+}
+
+.values-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.value-card {
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  max-width: 250px;
+  transition: transform 0.3s;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+}
+
+.value-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.value-card h4 {
+  color: #38a169;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.value-card p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  background-color: #29a71a;
+  border-radius: 50%;
+  padding: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-float img {
+  width: 40px;
+  height: 40px;
+}
+
+.whatsapp-float .tooltip-text {
+  position: absolute;
+  right: 70px;
+  background-color: #29a71a;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.whatsapp-float:hover .tooltip-text {
+  opacity: 1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
