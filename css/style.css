@@ -904,202 +904,264 @@ footer {
   opacity: 1;
 }
 
-/* About Us Page */
+/* --- Global Styling Enhancements --- */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
+/* --- About Us Section --- */
 .about-us-page {
-  padding: 60px 20px;
+  padding: 80px 20px;
+  background: linear-gradient(to bottom right, #f0fdf4, #ffffff);
+  text-align: center;
+  animation: fadeIn 1s ease-in;
 }
 
 .about-grid {
   display: flex;
-  flex-direction: column;   /* 👈 Stack items vertically */
-  align-items: center;      /* 👈 Center them horizontally */
-  gap: 30px;
-  text-align: center;       /* Optional: center the text */
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: slideUp 1.2s ease-in-out;
 }
 
+.about-image img {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
 .about-image img:hover {
-  transform: scale(1.05); /* slightly zoom in */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* stronger shadow */
+  transform: scale(1.05);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
 }
 
 .about-text {
-  flex: 1;
-  min-width: 300px;
+  max-width: 700px;
+  animation: fadeInUp 1.2s ease-in-out;
 }
-
 .about-text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
+  font-size: 2.8rem;
   color: #2f855a;
+  margin-bottom: 20px;
+  position: relative;
 }
-
+.about-text h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 10px auto 0;
+  background-color: #38a169;
+  border-radius: 5px;
+}
 .about-text p {
-  line-height: 1.7;
-  margin-bottom: 15px;
-  color: #444;
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 18px;
 }
-
 .about-text .btn {
-  margin-top: 15px;
+  display: inline-block;
+  background-color: #38a169;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+.about-text .btn:hover {
+  background-color: #2f855a;
 }
 
-/* Mission & Vision */
+/* --- Mission & Vision Section --- */
 .mission-vision {
-  background: #f5f5f5;
-  padding: 50px 20px;
+  padding: 70px 20px;
+  background-color: #f5f5f5;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
   justify-content: center;
+  gap: 40px;
+  animation: fadeInUp 1.2s ease-in-out;
 }
-
 .mv-box {
-  flex: 1 1 300px;
-  background: white;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  background: #fff;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
   text-align: center;
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.4s ease;
 }
-
+.mv-box:hover {
+  transform: translateY(-5px) rotateZ(-0.5deg);
+}
 .mv-box h3 {
   color: #2f855a;
-  margin-bottom: 10px;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+.mv-box p {
+  color: #555;
 }
 
-/* Team Section */
+/* --- Team Section --- */
 .meet-our-team {
-  padding: 60px 20px;
+  background: linear-gradient(to top left, #f5fdf7, #ffffff);
+  padding: 80px 20px;
   text-align: center;
-  background-color: #f9f9f9;
 }
-
 .team-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 35px;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 40px;
 }
-
 .team-member {
+  text-align: center;
   max-width: 220px;
+  animation: fadeInUp 1s ease-in-out;
+  animation-fill-mode: both;
 }
+.team-member:nth-child(1) { animation-delay: 0.1s; }
+.team-member:nth-child(2) { animation-delay: 0.2s; }
+.team-member:nth-child(3) { animation-delay: 0.3s; }
+.team-member:nth-child(4) { animation-delay: 0.4s; }
 
 .team-member img {
   width: 100%;
   height: 220px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #38a169;
-  transition: transform 0.3s;
+  border: 5px solid #38a169;
+  transition: transform 0.3s ease;
 }
-
 .team-member:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
-
 .team-member h4 {
   margin-top: 15px;
   font-size: 1.2rem;
   color: #333;
 }
-
 .team-member p {
   font-size: 0.95rem;
-  color: #777;
-}
-
-/* Timeline Section */
-.company-history {
-  padding: 60px 20px;
-  background: #fff;
-}
-
-.timeline {
-  border-left: 3px solid #38a169;
-  margin-left: 20px;
-  position: relative;
-}
-
-.timeline-item {
-  margin-bottom: 40px;
-  padding-left: 30px;
-  position: relative;
-}
-
-.timeline-item::before {
-  content: '';
-  width: 15px;
-  height: 15px;
-  background: #38a169;
-  border-radius: 50%;
-  position: absolute;
-  left: -8px;
-  top: 5px;
-}
-
-.timeline-year {
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #38a169;
-}
-
-.timeline-content h4 {
-  margin: 5px 0;
-  font-size: 1.2rem;
-}
-
-.timeline-content p {
   color: #666;
 }
 
-/* Core Values Section */
-.core-values {
-  padding: 60px 20px;
-  background-color: #f5fdf7;
-  text-align: center;
+/* --- Timeline Section --- */
+.company-history {
+  padding: 80px 20px;
+  background: #ffffff;
+}
+.timeline {
+  border-left: 4px solid #38a169;
+  position: relative;
+  padding-left: 30px;
+  max-width: 800px;
+  margin: auto;
+}
+.timeline-item {
+  margin-bottom: 50px;
+  position: relative;
+  animation: slideUp 1s ease-in-out;
+  animation-fill-mode: both;
+}
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) { animation-delay: 0.3s; }
+.timeline-item:nth-child(4) { animation-delay: 0.4s; }
+
+.timeline-item::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  background: #38a169;
+  border-radius: 50%;
+  position: absolute;
+  left: -10px;
+  top: 5px;
+}
+.timeline-year {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #38a169;
+  margin-bottom: 5px;
+}
+.timeline-content h4 {
+  font-size: 1.3rem;
+  margin: 6px 0;
+  color: #2f855a;
+}
+.timeline-content p {
+  color: #555;
 }
 
+/* --- Core Values Section --- */
+.core-values {
+  padding: 80px 20px;
+  background: #f5fdf7;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out;
+}
+.core-values h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #38a169;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
 .values-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
+  gap: 35px;
+  margin-top: 40px;
 }
-
 .value-card {
   background: #ffffff;
-  padding: 30px 20px;
+  padding: 35px 25px;
   border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-  max-width: 250px;
-  transition: transform 0.3s;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  max-width: 260px;
+  transition: transform 0.3s ease;
+  animation: zoomIn 1s ease-in-out;
+  animation-fill-mode: both;
 }
+.value-card:nth-child(1) { animation-delay: 0.1s; }
+.value-card:nth-child(2) { animation-delay: 0.2s; }
+.value-card:nth-child(3) { animation-delay: 0.3s; }
+.value-card:nth-child(4) { animation-delay: 0.4s; }
 
 .value-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
-
 .value-card img {
   width: 60px;
   height: 60px;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
-
 .value-card h4 {
   color: #38a169;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
 }
-
 .value-card p {
-  font-size: 0.95rem;
-  color: #666;
+  font-size: 0.96rem;
+  color: #555;
 }
 
-/* WhatsApp Floating Button */
+/* --- WhatsApp Floating Button --- */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -1117,12 +1179,10 @@ footer {
   height: 60px;
   animation: pulse 2s infinite;
 }
-
 .whatsapp-float img {
   width: 40px;
   height: 40px;
 }
-
 .whatsapp-float .tooltip-text {
   position: absolute;
   right: 70px;
@@ -1135,19 +1195,115 @@ footer {
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
-
 .whatsapp-float:hover .tooltip-text {
   opacity: 1;
 }
 
+/* --- Animations --- */
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.08);
-  }
-  100% {
-    transform: scale(1);
-  }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes zoomIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* SVG Divider */
+.svg-divider svg {
+  display: block;
+  width: 100%;
+  height: 100px;
+}
+
+.svg-divider.flip svg {
+  transform: rotate(180deg);
+}
+
+/* --- Services Section --- */
+.services-section {
+  padding: 80px 20px;
+  background: linear-gradient(to bottom right, #f0fdf4, #ffffff);
+  text-align: center;
+}
+
+.services-section .section-title {
+  font-size: 2.5rem;
+  color: #2f855a;
+  margin-bottom: 10px;
+}
+
+.services-section .section-intro {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  max-width: 280px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  color: #2f855a;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-size: 0.96rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.service-card .btn {
+  display: inline-block;
+  background-color: #38a169;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.service-card .btn:hover {
+  background-color: #2f855a;
 }
