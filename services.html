@@ -23,6 +23,7 @@
       <a href="about.html">About</a>
       <a href="services.html" class="active">Services</a>
       <a href="gallery.html">Gallery</a>
+      <a href="faq.html" >FAQ</a>
       <a href="contact.html">Contact</a>
     </nav>
   </div>
@@ -86,6 +87,15 @@
   <p>Let us help you choose the right cleaning service. Reach out to us anytime.</p>
   <a href="contact.html" class="btn">Contact Us</a>
 </section>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/60137551423?text=Hi%20JUZ%20CLEAN%2C%20I'm%20interested%20in%20your%20cleaning%20services." 
+   target="_blank" 
+   class="whatsapp-float" 
+   aria-label="Chat on WhatsApp">
+  <img src="images/whatsapp-icon.png" alt="WhatsApp Icon" />
+  <span class="tooltip-text">Contact Us Directly</span>
+</a>
 
 <!-- Footer -->
 <footer>
@@ -223,6 +233,7 @@ body {
   transform: scale(1.03) translateY(-6px);
   box-shadow: 0 12px 28px rgba(56, 161, 105, 0.45); /* stronger green glow */
   border-color: #2f855a; /* slightly darker green border on hover */
+  cursor: pointer;
 }
 
 .service-box:hover h3 {
@@ -360,6 +371,54 @@ footer {
   color: #555;
   font-size: 1.05rem;
 }
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  background-color: #29a71a;
+  border-radius: 50%;
+  padding: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  animation: pulse 2s infinite;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 36px;
+  height: 36px;
+}
+
+.tooltip-text {
+  position: absolute;
+  right: 70px;
+  background-color: #29a71a;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.whatsapp-float:hover .tooltip-text {
+  opacity: 1;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
 
 </style>
 
