@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | JUZ CLEAN</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Reset + Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+      padding-top: 90px;
+    }
+    a { text-decoration: none; }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 77, 0, 0.95);
+      color: white;
+      padding: 10px 0;
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    header .container {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .logo {
+      height: 60px;
+      background-color: white;
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+    .company-name {
+      color: white;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+    nav a:hover { color: #ccffcc; }
+
+    /* Hero */
+    .contact-hero {
+      background: linear-gradient(to right, #e6fff2, #ffffff);
+      text-align: center;
+      padding: 90px 20px 50px;
+    }
+    .contact-hero h2 {
+      font-size: 2.6rem;
+      color: #2f855a;
+      margin-bottom: 10px;
+    }
+    .contact-hero p {
+      color: #555;
+      font-size: 1.05rem;
+    }
+
+    /* Contact Info */
+    .contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 60px 20px;
+  background-color: #f0fdf4;
+  animation: fadeInBox 1s ease-in-out;
+}
+
+.contact-card {
+  flex: 1 1 230px;
+  background:#e9fbee;
+  border-radius: 15px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(56, 161, 105, 0.25);
+  background-color: #dff7e5;
+}
+
+.contact-card i {
+  font-size: 2.4rem;
+  color: #38a169;
+  margin-bottom: 12px;
+}
+
+.contact-card h4 {
+  margin: 10px 0 5px;
+  color: #2f855a;
+  font-size: 1.1rem;
+}
+
+.contact-card p {
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* Animation for cards */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.contact-card:nth-child(1) { animation-delay: 0.1s; }
+.contact-card:nth-child(2) { animation-delay: 0.2s; }
+.contact-card:nth-child(3) { animation-delay: 0.3s; }
+.contact-card:nth-child(4) { animation-delay: 0.4s; }
+
+
+    /* Form */
+    .contact-form-section {
+      padding: 60px 20px;
+      background: #ffffff;
+      max-width: 900px;
+      margin: auto;
+    }
+    form {
+      display: grid;
+      gap: 20px;
+    }
+    input, textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1.5px solid #ccc;
+      font-size: 1rem;
+      width: 100%;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .form-btn {
+      background-color: #38a169;
+      color: white;
+      padding: 14px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      border-radius: 8px;
+    }
+    .form-btn:hover {
+      background-color: #2f855a;
+    }
+
+    /* Map */
+    .map-section {
+      padding: 0;
+    }
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #004d00;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* WhatsApp Floating */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      background-color: #25d366;
+      border-radius: 50%;
+      padding: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      animation: pulse 2s infinite;
+    }
+    .whatsapp-float img {
+      width: 36px;
+      height: 36px;
+    }
+    .whatsapp-float:hover {
+      background-color: #1ebe5c;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      .contact-hero h2 { font-size: 2rem; }
+    }
+    .map-section {
+  background-color: #f0fdf4;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  animation: fadeIn 1.2s ease-in;
+}
+
+.map-container {
+  width: 100%;
+  max-width: 1000px;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 128, 0, 0.1);
+  border: 3px solid #38a169;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.map-container:hover {
+  transform: scale(1.01);
+  box-shadow: 0 12px 30px rgba(56, 161, 105, 0.4);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+input:invalid, textarea:invalid {
+  border: 1.5px solid red;
+}
+.contact-wrapper {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 128, 0, 0.08);
+  padding: 40px 30px;
+  margin: 40px auto;
+  max-width: 1000px;
+  animation: fadeInBox 1s ease-in-out;
+}
+
+@keyframes fadeInBox {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error-message {
+  color: #e53e3e;
+  font-size: 0.85rem;
+  margin-top: -15px;
+  margin-bottom: 10px;
+  display: none;
+}
+
+
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <div class="logo-box">
+      <img src="images/logo.png" alt="JUZ CLEAN Logo" class="logo" />
+      <a href="index.html" class="company-link">
+        <h1 class="company-name">JUZ CLEAN RESOURCES (M) SDN. BHD.</h1>
+      </a>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="faq.html" >FAQ</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="contact-hero">
+  <h2><i class="fas fa-envelope-open-text"></i> Contact Us</h2>
+  <p>We're here to help. Reach out to JUZ CLEAN for all your cleaning service needs.</p>
+</section>
+
+<!--Contact Info-->
+<section class="contact-info">
+  <div class="contact-card">
+    <i class="fas fa-phone"></i>
+    <h4>Call Us</h4>
+    <p>+60 13-755 1423</p>
+  </div>
+  <div class="contact-card">
+    <i class="fas fa-envelope"></i>
+    <h4>Email</h4>
+    <p>info@juzclean.com.my</p>
+  </div>
+  <div class="contact-card">
+    <i class="fas fa-map-marker-alt"></i>
+    <h4>Visit Us</h4>
+    <p>Selangor, Malaysia</p>
+  </div>
+  <div class="contact-card">
+    <i class="fab fa-whatsapp"></i>
+    <h4>WhatsApp</h4>
+    <p>+60 13-755 1423</p>
+  </div>
+</section>
+
+<!-- Contact Form -->
+<section class="contact-form-section">
+  <h2 style="text-align:center; color:#2f855a; margin-bottom: 30px;">Send Us a Message</h2>
+  <form id="contactForm" novalidate>
+    <input type="text" name="name" id="name" placeholder="Your Full Name" required />
+    <input type="email" name="email" id="email" placeholder="Your Email Address" required />
+    <input type="text" name="subject" id="subject" placeholder="Subject" required />
+    <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+    <button type="submit" class="form-btn">Submit Message</button>
+  <div style="text-align: center; margin-top: 15px;">
+  <div id="loading-spinner" style="display: none;">
+    <i class="fas fa-spinner fa-spin" style="color:#2f855a; font-size: 1.4rem;"></i>
+  </div>
+  <div id="status-message" style="margin-top: 10px; font-weight: bold;"></div>
+</div>
+</form>
+<div id="thankYouMessage" style="display: none; text-align:center; margin-top: 20px; color: #2f855a; font-weight: bold;">
+  Thank you for reaching out! We’ll be in touch soon.
+</div>
+</section>
+
+<!-- Google Map -->
+<!-- Google Map Section (Improved) -->
+<section class="map-section">
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1409.5385989705212!2d102.30002057518601!3d2.2372008931840623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2426b9e552ff8db3%3A0x498ddb238db4c767!2sJUZCLEAN!5e0!3m2!1sen!2smy!4v1753674470584!5m2!1sen!2smy" 
+      allowfullscreen 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 <strong>JUZ CLEAN RESOURCES (M) SDN. BHD.</strong> All rights reserved.</p>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/60137551423?text=Hi%20JUZ%20CLEAN%2C%20I%27m%20interested%20in%20your%20cleaning%20services." 
+   target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <img src="images/whatsapp-icon.png" alt="WhatsApp" />
+</a>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contactForm");
+  const spinner = document.getElementById("loading-spinner");
+  const status = document.getElementById("status-message");
+
+  function isValidEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    status.textContent = "";
+    spinner.style.display = "inline-block";
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !subject || !message) {
+      spinner.style.display = "none";
+      status.textContent = "❌ Please fill in all the fields.";
+      status.style.color = "red";
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      spinner.style.display = "none";
+      status.textContent = "❌ Please enter a valid email address.";
+      status.style.color = "red";
+      return;
+    }
+
+    // Submit using Formspree
+    fetch("https://formspree.io/f/xjkorggn", {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" }
+    })
+      .then(response => {
+        spinner.style.display = "none";
+        if (response.ok) {
+          status.textContent = "✅ Message sent successfully!";
+          status.style.color = "green";
+          form.reset();
+        } else {
+          throw new Error("Form submission failed.");
+        }
+      })
+      .catch(error => {
+        spinner.style.display = "none";
+        status.textContent = "❌ Something went wrong. Please try again.";
+        status.style.color = "red";
+      });
+  });
+});
+</script>
+</body>
+</html>
