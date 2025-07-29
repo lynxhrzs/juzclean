@@ -86,28 +86,33 @@
 }
 
 .contact-card {
-  flex: 1 1 230px;
-  background:#e9fbee;
-  border-radius: 15px;
-  padding: 30px 20px;
+  background: #e9fbee; /* light green */
+  padding: 30px;
+  border-radius: 16px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: fadeInUp 0.8s ease forwards;
-  opacity: 0;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .contact-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(56, 161, 105, 0.25);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
   background-color: #dff7e5;
 }
 
+.contact-card:hover i {
+  animation: bounce 0.6s;
+}
+
+
 .contact-card i {
   font-size: 2.4rem;
-  color: #38a169;
+  color: #2f855a;
   margin-bottom: 12px;
+  display: inline-block;
+  transition: transform 0.3s ease;
 }
+
 
 .contact-card h4 {
   margin: 10px 0 5px;
@@ -186,37 +191,90 @@
       padding: 20px;
     }
 
-    /* WhatsApp Floating */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 999;
-      background-color: #25d366;
-      border-radius: 50%;
-      padding: 14px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: background-color 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      animation: pulse 2s infinite;
-    }
-    .whatsapp-float img {
-      width: 36px;
-      height: 36px;
-    }
-    .whatsapp-float:hover {
-      background-color: #1ebe5c;
-    }
+   /* WhatsApp Floating Button with Pulse */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #29a71a;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite;
+}
 
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-float img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+  
+}
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.whatsapp-float img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover img {
+  transform: scale(1.1);
+}
+
+/* Tooltip text */
+.tooltip-text {
+  visibility: hidden;
+  background-color: #29a71a;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  padding: 6px 12px;
+  position: absolute;
+  right: 60px; /* Position to the left of the icon */
+  bottom: 10px;
+  white-space: nowrap;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show tooltip on hover */
+.whatsapp-float:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
 
     @media (max-width: 768px) {
       .contact-hero h2 { font-size: 2rem; }
@@ -279,6 +337,15 @@ input:invalid, textarea:invalid {
     transform: translateY(0);
   }
 }
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
 
 .error-message {
   color: #e53e3e;
@@ -382,10 +449,13 @@ input:invalid, textarea:invalid {
   <p>© 2025 <strong>JUZ CLEAN RESOURCES (M) SDN. BHD.</strong> All rights reserved.</p>
 </footer>
 
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/60137551423?text=Hi%20JUZ%20CLEAN%2C%20I%27m%20interested%20in%20your%20cleaning%20services." 
-   target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
-  <img src="images/whatsapp-icon.png" alt="WhatsApp" />
+<!-- WhatsApp Button -->
+<a href="https://wa.me/60137551423?text=Hi%20JUZ%20CLEAN%2C%20I'm%20interested%20in%20your%20cleaning%20services." 
+   target="_blank" 
+   class="whatsapp-float" 
+   aria-label="Chat on WhatsApp">
+  <img src="images/whatsapp-icon.png" alt="WhatsApp Icon" />
+  <span class="tooltip-text">Contact Us Directly</span>
 </a>
 
 <script>

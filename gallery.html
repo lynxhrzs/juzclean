@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery | JUZ CLEAN</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Lightbox2 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet">
+
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0fff5;
+      color: #333;
+      padding-top: 90px;
+    }
+    a { text-decoration: none; }
+
+    /* Header (same as other pages) */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 77, 0, 0.95);
+      color: white;
+      padding: 10px 0;
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    header .container {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .logo {
+      height: 60px;
+      background-color: white;
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+    .company-name {
+      color: white;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+    nav a:hover { color: #ccffcc; }
+
+    /* Hero Section */
+    .gallery-hero {
+      background: linear-gradient(to right, #e6fff2, #ffffff);
+      text-align: center;
+      padding: 80px 20px 50px;
+    }
+    .gallery-hero h2 {
+      font-size: 2.6rem;
+      color: #2f855a;
+      margin-bottom: 10px;
+    }
+    .gallery-hero p {
+      font-size: 1.05rem;
+      color: #555;
+    }
+
+    /* Filter Buttons */
+    .filter-buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .filter-buttons button {
+      background-color: #38a169;
+      color: white;
+      border: none;
+      margin: 5px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .filter-buttons button:hover,
+    .filter-buttons button.active {
+      background-color: #2f855a;
+    }
+
+    /* Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+      border: 2px solid #38a169;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 24px rgba(56, 161, 105, 0.4);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .caption {
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      text-align: center;
+      padding: 8px;
+      font-size: 0.95rem;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #004d00;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+    .gallery-item a {
+  display: block;
+}
+/* WhatsApp Floating Button with Pulse */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #29a71a;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-float img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+  
+}
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.whatsapp-float img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover img {
+  transform: scale(1.1);
+}
+
+/* Tooltip text */
+.tooltip-text {
+  visibility: hidden;
+  background-color: #29a71a;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  padding: 6px 12px;
+  position: absolute;
+  right: 60px; /* Position to the left of the icon */
+  bottom: 10px;
+  white-space: nowrap;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show tooltip on hover */
+.whatsapp-float:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <div class="logo-box">
+      <img src="images/logo.png" alt="JUZ CLEAN Logo" class="logo" />
+      <a href="index.html" class="company-link">
+        <h1 class="company-name">JUZ CLEAN RESOURCES (M) SDN. BHD.</h1>
+      </a>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="faq.html" >FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="gallery-hero">
+  <h2><i class="fas fa-images"></i> Our Gallery</h2>
+  <p>Take a look at our recent cleaning projects and satisfied spaces.</p>
+</section>
+
+<!-- Filter Buttons -->
+<div class="filter-buttons">
+  <button class="active" data-filter="all">All</button>
+  <button data-filter="residential">Residential</button>
+  <button data-filter="office">Office</button>
+  <button data-filter="before-after">Before & After</button>
+</div>
+
+<!-- Gallery Grid with Lightbox -->
+<div class="gallery-grid">
+  <div class="gallery-item" data-category="residential" data-aos="fade-up">
+    <a href="images/gallery1.jpg" data-lightbox="gallery" data-title="Living Room Clean">
+      <img src="images/gallery1.jpg" alt="Gallery 1">
+    </a>
+    <div class="caption">Living Room Clean</div>
+  </div>
+
+  <div class="gallery-item" data-category="office" data-aos="fade-up">
+    <a href="images/gallery2.jpg" data-lightbox="gallery" data-title="Office Cleaning">
+      <img src="images/gallery2.jpg" alt="Gallery 2">
+    </a>
+    <div class="caption">Office Cleaning</div>
+  </div>
+
+  <div class="gallery-item" data-category="before-after" data-aos="fade-up">
+    <a href="images/gallery3.jpg" data-lightbox="gallery" data-title="Before & After: Bathroom">
+      <img src="images/gallery3.jpg" alt="Before After">
+    </a>
+    <div class="caption">Before & After: Bathroom</div>
+  </div>
+
+  <div class="gallery-item" data-category="residential" data-aos="fade-up">
+    <a href="images/gallery4.jpg" data-lightbox="gallery" data-title="Bedroom Refresh">
+      <img src="images/gallery4.jpg" alt="Gallery 4">
+    </a>
+    <div class="caption">Bedroom Refresh</div>
+  </div>
+
+  <div class="gallery-item" data-category="office" data-aos="fade-up">
+    <a href="images/gallery5.jpg" data-lightbox="gallery" data-title="Conference Room">
+      <img src="images/gallery5.jpg" alt="Gallery 5">
+    </a>
+    <div class="caption">Conference Room</div>
+  </div>
+
+  <div class="gallery-item" data-category="before-after" data-aos="fade-up">
+    <a href="images/gallery6.jpg" data-lightbox="gallery" data-title="Carpet Restoration">
+      <img src="images/gallery6.jpg" alt="Gallery 6">
+    </a>
+    <div class="caption">Carpet Restoration</div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 <strong>JUZ CLEAN RESOURCES (M) SDN. BHD.</strong> All rights reserved.</p>
+</footer>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/60137551423?text=Hi%20JUZ%20CLEAN%2C%20I'm%20interested%20in%20your%20cleaning%20services." 
+   target="_blank" 
+   class="whatsapp-float" 
+   aria-label="Chat on WhatsApp">
+  <img src="images/whatsapp-icon.png" alt="WhatsApp Icon" />
+  <span class="tooltip-text">Contact Us Directly</span>
+</a>
+
+<!-- Lightbox (optional if needed later) -->
+<!-- <script src="lightbox.js"></script> -->
+
+<!-- AOS + Filter Script -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000 });
+
+  const filterBtns = document.querySelectorAll('.filter-buttons button');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelector('.filter-buttons .active').classList.remove('active');
+      btn.classList.add('active');
+      const filter = btn.getAttribute('data-filter');
+
+      galleryItems.forEach(item => {
+        const category = item.getAttribute('data-category');
+        if (filter === 'all' || filter === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+<!-- Lightbox2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
+
+</body>
+</html>

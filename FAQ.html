@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FAQs | JUZ CLEAN</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 </head>
 <body>
 
@@ -30,33 +31,33 @@
 
 <!-- FAQ Section -->
 <section class="faq-section">
-  <h2>Frequently Asked Questions</h2>
+  <h2 data-aos="fade-down">Frequently Asked Questions</h2>
   <div class="faq-container">
-    <div class="faq-item">
+    <div class="faq-item" data-aos="fade-up">
       <button class="faq-question">What areas do you serve?</button>
       <div class="faq-answer">
         <p>We provide cleaning services across Selangor and the Klang Valley. Contact us to confirm availability in your location.</p>
       </div>
     </div>
-    <div class="faq-item">
+    <div class="faq-item" data-aos="fade-up">
       <button class="faq-question">Do I need to be home during the cleaning?</button>
       <div class="faq-answer">
         <p>No, it’s up to you. Many clients are not home during service. You can leave instructions and we’ll handle the rest.</p>
       </div>
     </div>
-    <div class="faq-item">
+    <div class="faq-item" data-aos="fade-up">
       <button class="faq-question">Are your products safe for kids and pets?</button>
       <div class="faq-answer">
         <p>Yes. We use eco-friendly and non-toxic cleaning products safe for children, pets, and the environment.</p>
       </div>
     </div>
-    <div class="faq-item">
+    <div class="faq-item" data-aos="fade-up">
       <button class="faq-question">What’s included in a standard cleaning?</button>
       <div class="faq-answer">
         <p>Dusting, mopping, vacuuming, sanitizing bathrooms and kitchens, trash removal, and general tidying. Deep cleaning is also available.</p>
       </div>
     </div>
-    <div class="faq-item">
+    <div class="faq-item" data-aos="fade-up">
       <button class="faq-question">How do I book a cleaning service?</button>
       <div class="faq-answer">
         <p>You can book via our <a href="contact.html">Contact Page</a> or WhatsApp us directly at <strong>+60 13-755 1423</strong>.</p>
@@ -164,6 +165,10 @@ body {
   overflow: hidden;
   background: #f5fdf7;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+.faq-item:hover {
+  transform: scale(1.01);
 }
 .faq-question {
   width: 100%;
@@ -205,61 +210,65 @@ footer {
   padding: 20px;
   margin-top: 40px;
 }
-/* WhatsApp Floating Button */
+/* WhatsApp Floating Button with Pulse */
 .whatsapp-float {
   position: fixed;
+  width: 60px;
+  height: 60px;
   bottom: 20px;
   right: 20px;
-  z-index: 999;
   background-color: #29a71a;
   border-radius: 50%;
-  padding: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
   animation: pulse 2s infinite;
-  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease;
 }
-
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
 .whatsapp-float img {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
-
 .tooltip-text {
-  position: absolute;
-  right: 70px;
+  visibility: hidden;
   background-color: #29a71a;
   color: white;
+  text-align: center;
+  border-radius: 20px;
   padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 0.85rem;
+  position: absolute;
+  right: 60px;
+  bottom: 10px;
+  white-space: nowrap;
+  font-size: 14px;
   opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-
 .whatsapp-float:hover .tooltip-text {
+  visibility: visible;
   opacity: 1;
 }
-
-/* Pulse animation */
 @keyframes pulse {
-  0%   { transform: scale(1); }
-  50%  { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 </style>
 
-<!-- =================== SCRIPT =================== -->
+<!-- =================== SCRIPTS =================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-  const faqs = document.querySelectorAll('.faq-item');
-  faqs.forEach(faq => {
-    faq.querySelector('.faq-question').addEventListener('click', () => {
-      faq.classList.toggle('active');
+  AOS.init();
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const parent = btn.closest('.faq-item');
+      parent.classList.toggle('active');
     });
   });
 </script>

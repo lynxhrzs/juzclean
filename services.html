@@ -371,52 +371,88 @@ footer {
   color: #555;
   font-size: 1.05rem;
 }
-/* WhatsApp Floating Button */
+/* WhatsApp Floating Button with Pulse */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #29a71a;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-float img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+  
+}
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 999;
-  background-color: #29a71a;
-  border-radius: 50%;
-  padding: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  animation: pulse 2s infinite;
-  transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
 .whatsapp-float img {
-  width: 36px;
-  height: 36px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
 }
 
+.whatsapp-float:hover img {
+  transform: scale(1.1);
+}
+
+/* Tooltip text */
 .tooltip-text {
-  position: absolute;
-  right: 70px;
+  visibility: hidden;
   background-color: #29a71a;
   color: white;
+  text-align: center;
+  border-radius: 20px;
   padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 0.85rem;
+  position: absolute;
+  right: 60px; /* Position to the left of the icon */
+  bottom: 10px;
+  white-space: nowrap;
+  font-size: 14px;
   opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
+/* Show tooltip on hover */
 .whatsapp-float:hover .tooltip-text {
+  visibility: visible;
   opacity: 1;
-}
-
-/* Pulse animation */
-@keyframes pulse {
-  0%   { transform: scale(1); }
-  50%  { transform: scale(1.1); }
-  100% { transform: scale(1); }
 }
 
 

@@ -914,8 +914,8 @@ body {
 
 /* --- About Us Section --- */
 .about-us-page {
-  padding: 80px 20px;
-  background: linear-gradient(to bottom right, #f0fdf4, #ffffff);
+  padding: 100px 20px;
+  background: linear-gradient(to bottom right, #c8f3d4, #95daa9);
   text-align: center;
   animation: fadeIn 1s ease-in;
 }
@@ -924,22 +924,30 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 50px;
   max-width: 1100px;
   margin: 0 auto;
   animation: slideUp 1.2s ease-in-out;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease;
+}
+.about-grid:hover {
+  transform: scale(1.01);
 }
 
 .about-image img {
   max-width: 500px;
   width: 100%;
-  border-radius: 30px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 .about-image img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+  transform: scale(1.06) rotate(0.5deg);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.15);
 }
 
 .about-text {
@@ -955,35 +963,38 @@ body {
 .about-text h2::after {
   content: '';
   display: block;
-  width: 60px;
-  height: 4px;
-  margin: 10px auto 0;
+  width: 70px;
+  height: 5px;
+  margin: 12px auto 0;
   background-color: #38a169;
   border-radius: 5px;
 }
 .about-text p {
-  font-size: 1.05rem;
-  color: #555;
-  margin-bottom: 18px;
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 20px;
+  line-height: 1.8;
 }
 .about-text .btn {
   display: inline-block;
   background-color: #38a169;
   color: white;
-  padding: 12px 25px;
-  border-radius: 8px;
+  padding: 14px 30px;
+  border-radius: 10px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
-  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(56, 161, 105, 0.3);
 }
 .about-text .btn:hover {
   background-color: #2f855a;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(56, 161, 105, 0.45);
 }
 
-/* --- Mission & Vision Section --- */
+/* Mission & Vision Section */
 .mission-vision {
-  padding: 70px 20px;
-  background-color: #f5f5f5;
+  padding: 80px 20px;
+  background-color: #f0fdf4;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -991,61 +1002,57 @@ body {
   animation: fadeInUp 1.2s ease-in-out;
 }
 .mv-box {
-  background: #fff;
-  padding: 30px;
+  background: white;
+  padding: 35px;
   border-radius: 18px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
   text-align: center;
-  width: 100%;
-  max-width: 400px;
-  transition: transform 0.4s ease;
+  max-width: 420px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .mv-box:hover {
-  transform: translateY(-5px) rotateZ(-0.5deg);
+  transform: translateY(-8px) rotateZ(-0.5deg);
+  box-shadow: 0 10px 30px rgba(56, 161, 105, 0.2);
 }
 .mv-box h3 {
   color: #2f855a;
-  font-size: 1.6rem;
-  margin-bottom: 12px;
+  font-size: 1.7rem;
+  margin-bottom: 14px;
 }
 .mv-box p {
   color: #555;
+  font-size: 1.05rem;
 }
 
-/* --- Team Section --- */
+/* Team Section */
 .meet-our-team {
   background: linear-gradient(to top left, #f5fdf7, #ffffff);
-  padding: 80px 20px;
+  padding: 90px 20px;
   text-align: center;
 }
 .team-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 35px;
+  gap: 40px;
   justify-content: center;
   margin-top: 40px;
 }
 .team-member {
   text-align: center;
-  max-width: 220px;
-  animation: fadeInUp 1s ease-in-out;
-  animation-fill-mode: both;
+  max-width: 230px;
+  animation: fadeInUp 1s ease-in-out both;
+  transition: transform 0.3s ease;
 }
-.team-member:nth-child(1) { animation-delay: 0.1s; }
-.team-member:nth-child(2) { animation-delay: 0.2s; }
-.team-member:nth-child(3) { animation-delay: 0.3s; }
-.team-member:nth-child(4) { animation-delay: 0.4s; }
-
+.team-member:hover {
+  transform: scale(1.06);
+}
 .team-member img {
   width: 100%;
   height: 220px;
   object-fit: cover;
   border-radius: 50%;
   border: 5px solid #38a169;
-  transition: transform 0.3s ease;
-}
-.team-member:hover img {
-  transform: scale(1.08);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 .team-member h4 {
   margin-top: 15px;
@@ -1057,29 +1064,23 @@ body {
   color: #666;
 }
 
-/* --- Timeline Section --- */
+/* Timeline Section */
 .company-history {
-  padding: 80px 20px;
+  padding: 90px 20px;
   background: #ffffff;
 }
 .timeline {
   border-left: 4px solid #38a169;
-  position: relative;
   padding-left: 30px;
-  max-width: 800px;
+  max-width: 850px;
   margin: auto;
+  position: relative;
 }
 .timeline-item {
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   position: relative;
-  animation: slideUp 1s ease-in-out;
-  animation-fill-mode: both;
+  animation: slideUp 1s ease-in-out both;
 }
-.timeline-item:nth-child(1) { animation-delay: 0.1s; }
-.timeline-item:nth-child(2) { animation-delay: 0.2s; }
-.timeline-item:nth-child(3) { animation-delay: 0.3s; }
-.timeline-item:nth-child(4) { animation-delay: 0.4s; }
-
 .timeline-item::before {
   content: '';
   width: 18px;
@@ -1105,9 +1106,9 @@ body {
   color: #555;
 }
 
-/* --- Core Values Section --- */
+/* Core Values Section */
 .core-values {
-  padding: 80px 20px;
+  padding: 90px 20px;
   background: #f5fdf7;
   text-align: center;
   animation: fadeInUp 1s ease-in-out;
@@ -1125,26 +1126,21 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 35px;
+  gap: 40px;
   margin-top: 40px;
 }
 .value-card {
-  background: #ffffff;
+  background: white;
   padding: 35px 25px;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-  max-width: 260px;
-  transition: transform 0.3s ease;
-  animation: zoomIn 1s ease-in-out;
-  animation-fill-mode: both;
+  max-width: 270px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: zoomIn 1s ease-in-out both;
 }
-.value-card:nth-child(1) { animation-delay: 0.1s; }
-.value-card:nth-child(2) { animation-delay: 0.2s; }
-.value-card:nth-child(3) { animation-delay: 0.3s; }
-.value-card:nth-child(4) { animation-delay: 0.4s; }
-
 .value-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(56, 161, 105, 0.2);
 }
 .value-card img {
   width: 60px;
@@ -1161,63 +1157,3 @@ body {
   color: #555;
 }
 
-/* --- WhatsApp Floating Button --- */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
-  background-color: #29a71a;
-  border-radius: 50%;
-  padding: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  animation: pulse 2s infinite;
-}
-.whatsapp-float img {
-  width: 40px;
-  height: 40px;
-}
-.whatsapp-float .tooltip-text {
-  position: absolute;
-  right: 70px;
-  background-color: #29a71a;
-  color: white;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-.whatsapp-float:hover .tooltip-text {
-  opacity: 1;
-}
-
-/* --- Animations --- */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-  100% { transform: scale(1); }
-}
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-@keyframes slideUp {
-  0% { opacity: 0; transform: translateY(50px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-@keyframes zoomIn {
-  0% { opacity: 0; transform: scale(0.9); }
-  100% { opacity: 1; transform: scale(1); }
-}
